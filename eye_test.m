@@ -23,6 +23,9 @@ colshift = bboxes(1);
  
 
 guy_sunglasses((1:size(sunglasses, 1))+rowshift, (1:size(sunglasses,2))+colshift,:) = sunglasses;
+
+%guy_sunglasses((bboxes(2):bboxes(2) + bboxes(4)), bboxes(1):bboxes(1) + bboxes(3), :) = sunglasses;
+
 close all 
 imshow(guy_sunglasses)
 
