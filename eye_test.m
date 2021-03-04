@@ -13,24 +13,17 @@ figure
 imshow(Ieyes)
 title('Detected Eyes');
 
-%if eyes are present
-    %index width of bboxes 
-    %call in sunglasses (or whatever) 
-    %resize it to fit width of bboxes (redefine sunglasses image matrix to
-    %be same values as bboxes)
-    %index position 1 and 2 of bboxes
-    %
 sunglasses = imread('sunglasses.png');
-%sunglasses = imresize(sunglasses, [bboxes(3) bboxes(4)])
+sunglasses = imresize(sunglasses, [bboxes(4) bboxes(3)]);
 guy = imread('white_man.png');
 guy_sunglasses = guy;
-
-rowshift = bboxes(3);
-colshift = bboxes(4);
-
+ 
+rowshift = bboxes(2);
+colshift = bboxes(1);
+ 
 
 guy_sunglasses((1:size(sunglasses, 1))+rowshift, (1:size(sunglasses,2))+colshift,:) = sunglasses;
+close all 
+imshow(guy_sunglasses)
 
-
-hello = image(guy_sunglasses)
 axis image; axis off;
