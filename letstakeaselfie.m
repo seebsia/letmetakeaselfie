@@ -18,7 +18,7 @@ runLoop = true;
 numPts = 0;
 frameCount = 0;
 
-while runLoop && frameCount < 400
+while runLoop && frameCount < 1000
 
     % Get the next frame.
     videoFrame = snapshot(cam);
@@ -107,3 +107,5 @@ clear cam;
 release(videoPlayer);
 release(pointTracker);
 release(faceDetector);
+
+%are changes detected on Github?
