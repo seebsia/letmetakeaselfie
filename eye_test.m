@@ -14,7 +14,7 @@ imshow(Ieyes)
 title('Detected Eyes');
 
 sunglasses = imread('sunglasses.png');
-sunglasses = imresize(sunglasses, [bboxes(4) bboxes(3)]);
+sunglasses = imresize(sunglasses, [(bboxes(4) + 1) (bboxes(3) + 1)]);
 guy = imread('white_man.png');
 guy_sunglasses = guy;
  
@@ -22,9 +22,9 @@ rowshift = bboxes(2);
 colshift = bboxes(1);
  
 
-guy_sunglasses((1:size(sunglasses, 1))+rowshift, (1:size(sunglasses,2))+colshift,:) = sunglasses;
+%guy_sunglasses((1:size(sunglasses, 1))+rowshift, (1:size(sunglasses,2))+colshift,:) = sunglasses;
 
-%guy_sunglasses((bboxes(2):bboxes(2) + bboxes(4)), bboxes(1):bboxes(1) + bboxes(3), :) = sunglasses;
+guy_sunglasses(bboxes(2):bboxes(2) + bboxes(4), bboxes(1):bboxes(1) + bboxes(3), :)= sunglasses;
 
 close all 
 imshow(guy_sunglasses)
