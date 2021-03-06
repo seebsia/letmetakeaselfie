@@ -14,7 +14,7 @@ imshow(Ieyes)
 %title('Detected Eyes'); %i actually dont think we need this
 %this creates a box around the detected region and names it Eyes
 
-sunglasses = imread('glasses.png');
+sunglasses = imread('sunglasses.png');
 sunglasses = imresize(sunglasses, [(bboxes(4) + 1) (bboxes(3) + 1)]);
 guy = imread('white_man.png');
 guy_sunglasses = guy;
