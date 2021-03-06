@@ -7,21 +7,27 @@ Ieyes = insertObjectAnnotation(I,'rectangle',bboxes,'Eyes');
 figure
 imshow(Ieyes)
 % bringing in the photos
-guy = imread('white_man.png');
-x = ones(size(guy));
+guy = im2double(imread('white_man.png'));
+x = zeros(size(guy));
 image(guy)
-sunglasses = imread('glasses.png');
+sunglasses = im2double(imread('glasses.png'))*255;
 % this is supposed to make it transparent; has worked in tests before
 hold on
-im = image(sunglasses);
-im.AlphaData = max(sunglasses, [], 3);
+sunglasses = imresize(sunglasses, [(bboxes(4) + 1) (bboxes(3) + 1)]);
+x(bboxes(2):bboxes(2) + bboxes(4), bboxes(1):bboxes(1) + bboxes(3), :) = sunglasses;
+
+im = image(x);
+im.AlphaData = max(x, [], 3);
 hold off
 % index to where eyes are detected and insert sunglasses
-sunglasses = imresize(sunglasses, [(bboxes(4) + 1) (bboxes(3) + 1)]);
-x(bboxes(2):bboxes(2) + bboxes(4), bboxes(1):bboxes(1) + bboxes(3), :)= sunglasses;
+
 % guy = imread('white_man.png');
 % guy_sunglasses = guy;
 % guy_sunglasses(bboxes(2):bboxes(2) + bboxes(4), bboxes(1):bboxes(1) + bboxes(3), :)= sunglasses;
 % show final image
-imshow(x)
+
+h = imshow(guy);
+set(h, 'AlphaData', x);
+
+imshow(x);
 axis image; axis off;
