@@ -11,5 +11,3 @@ bboxes = facedetector(I);
 Iface = insertObjectAnnotation(I,'rectangle',bboxes,'Eyes');
 figure
 imshow(Iface)
-
-bboxes = cat3(
