@@ -9,15 +9,23 @@ bboxes = facedetector(I);
 %corner
 
 gradcap = imread('grad_cap.png');
-gradcap = imresize(gradcap, [(bboxes(4) + 1) (bboxes(3) + 1)]);
-guy = imread('white_man.png');
+gradcap = imresize(gradcap, [(bboxes(4) + 1) (bboxes(3))]);
 guy_gradcap = guy;
  
+guy = im2double(imread('white_man.png'));
+x = zeros(size(guy));
+image(guy)
+gradcap = im2double(imread('grad_cap.png'));
 
-%guy_gradcap(bboxes(2):bboxes(2) + bboxes(4), bboxes(1):bboxes(1) + bboxes(3), :)= gradcap;
-m = size(gradcap)
-guy_gradcap(bboxes(2)- size(2):bboxes(2), 1:bboxes(1)) = gradcap;
-close all 
-imshow(guy_gradcap)
+hold on
+gradcap = imresize(gradcap, [(bboxes(4) + 1) (bboxes(3) + 1)]);
+m = size(gradcap);
+guy_gradcap(1:bboxes(2),bboxes(1):bboxes(1) + bboxes(3), :) = gradcap;
+
+im = image(x);
+im.AlphaData = max(x, [], 3);
+hold off
+
+
 
 axis image; axis off;
