@@ -8,9 +8,9 @@ bboxes = eyesdetector(I);
 %the numbers in the vector represent [x y width height] from the upper-left
 %corner
 
-Ieyes = insertObjectAnnotation(I,'rectangle',bboxes,'Eyes');
-figure
-imshow(Ieyes)
+%Ieyes = insertObjectAnnotation(I,'rectangle',bboxes,'Eyes');
+%figure
+%imshow(Ieyes)
 %title('Detected Eyes'); %i actually dont think we need this
 %this creates a box around the detected region and names it Eyes
 
