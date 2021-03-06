@@ -13,10 +13,10 @@ gradcap = imresize(gradcap, [(bboxes(4) + 1) (bboxes(3) + 1)]);
 guy = imread('white_man.png');
 guy_gradcap = guy;
  
-black_background = red == 0 & green == 0 & blue == 0;
 
-guy_gradcap(bboxes(2):bboxes(2) + bboxes(4), bboxes(1):bboxes(1) + bboxes(3), :)= gradcap;
-
+%guy_gradcap(bboxes(2):bboxes(2) + bboxes(4), bboxes(1):bboxes(1) + bboxes(3), :)= gradcap;
+m = size(gradcap)
+guy_gradcap(bboxes(2)- size(2):bboxes(2), 1:bboxes(1)) = gradcap;
 close all 
 imshow(guy_gradcap)
 
