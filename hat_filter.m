@@ -5,16 +5,16 @@ filename ='white_man.png';
 outfilename = websave(filename,url);
 I = imread('white_man.png');
 bboxes = facedetector(I);
-gradcap = imread('grad_cap.png');
+gradcap = imread('grad_cap_neon.png');
 
  
 guy = im2double(imread('white_man.png'));
 x = zeros(size(guy));
 image(guy)
-gradcap = im2double(imread('grad_cap.png'));
+gradcap = im2double(imread('grad_cap_neon.png'));
 
 hold on
-gradcap = imresize(gradcap, [(bboxes(4)) - 233 (bboxes(3)) + 1]);
+gradcap = imresize(gradcap,[(bboxes(4)) - 233 (bboxes(3)) + 1]);
 x(1:bboxes(2),bboxes(1):bboxes(1) + bboxes(3), :) = gradcap;
 im = image(x);
 im.AlphaData = max(x, [], 3);
