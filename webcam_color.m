@@ -15,7 +15,6 @@ while runLoop && frameCount < 1000
     videoFrame = snapshot(cam);
     videoFrameGray = rgb2gray(videoFrame); 
     frameCount = frameCount + 1;
-    %x = input('What color?')
     
     if strcmpi(x, 'redn')
         red = cat(3, videoFrameGray, zeros(size(videoFrameGray)), zeros(size(videoFrameGray)));
@@ -38,6 +37,12 @@ while runLoop && frameCount < 1000
     elseif strcmpi(x, 'yellow')
         yellowimg = cat(3, 1.0*videoFrameGray, 1.0*videoFrameGray, zeros(size(videoFrameGray)));
         step(videoPlayer, yellowimg); 
+    elseif strcmpi(x, 'xray')
+        negative = imcomplement(videoFrame);
+        step(videoPlayer, negative);
+    elseif strcmpi(x, 'gray xray')
+        negativegray = imcomplement(videoFrameGray);
+        step(videoPlayer, negativegray);
     else strcmpi(x, 'none');
         step(videoPlayer, videoFrame);
     end 
@@ -45,5 +50,3 @@ while runLoop && frameCount < 1000
     runLoop = isOpen(videoPlayer);
 
 end
-
-%preview(cam);
