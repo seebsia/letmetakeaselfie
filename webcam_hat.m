@@ -36,7 +36,8 @@ while runLoop && frameCount < 1000
         
     runLoop = isOpen(videoPlayer);
     release(videoPlayer);
-    release(eyesdetector);
+    release(facedetector);
     
 end
 clear cam;
+
