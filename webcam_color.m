@@ -16,7 +16,7 @@ while runLoop && frameCount < 1000
     videoFrameGray = rgb2gray(videoFrame); 
     frameCount = frameCount + 1;
     
-    if strcmpi(x, 'redn')
+    if strcmpi(x, 'red')
         red = cat(3, videoFrameGray, zeros(size(videoFrameGray)), zeros(size(videoFrameGray)));
         step(videoPlayer, red);
     elseif strcmpi(x, 'blue')
