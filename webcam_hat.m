@@ -15,7 +15,7 @@ while runLoop && frameCount < 1000
     videoFrameGray = rgb2gray(videoFrame);
     frameCount = frameCount + 1;
     
-    bboxes = facedetector(videoFrame);
+    bboxes = facedetector.step(videoFrame);
 
     videodouble = im2double(videoFrame);
     x = zeros(size(videodouble));
