@@ -43,5 +43,5 @@ while runLoop && frameCount < 1000
     step(videoPlayer, x);
         
     runLoop = isOpen(videoPlayer);
-
+    
 end
