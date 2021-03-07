@@ -16,11 +16,12 @@ while runLoop && frameCount < 1000
     videoFrameGray = rgb2gray(videoFrame);
     frameCount = frameCount + 1;
     
-    bboxes = eyesdetector(videoFrame);
+    bboxes = eyesdetector.step(videoFrame);
     % Places box over where eyes are detected
     
-
-   
+    if isempty(bboxes)
+        return
+    end
     % Bringing in the sunglasses and person photos
     videodouble = im2double(videoFrame);
     x = zeros(size(videodouble));
@@ -37,11 +38,13 @@ while runLoop && frameCount < 1000
     im.AlphaData = max(x, [], 3);
     hold off
 
-
+    
     % Display the annotated video frame using the video player object.
   
     step(videoPlayer, x);
         
     runLoop = isOpen(videoPlayer);
-    
+    release(videoPlayer);
+    release(eyesdetector);
 end
+clear cam;
