@@ -73,9 +73,6 @@ while runLoop && frameCount < 1000
 
 end
 
-clear cam;
-release(videoPlayer);
-release(facedetector);
 
 % %  Insert while loop for glasses (use o for object filter answers)
 % if strcmpi(o, 'glasses')
@@ -90,5 +87,10 @@ release(facedetector);
 % % Insert while loop for hearts (use o for object filter answers)
 % if strcmpi(o, 'hearts')
 % end
+
+%Clean everything up
+clear cam;
+release(videoPlayer);
+release(facedetector);
 
 
