@@ -1,13 +1,20 @@
+%create the face detector object and webcam object
 facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
 cam = webcam();
 
+%create a variable that takes a snapshot of each frame and gets its size
+%creates a video player object
 videoFrame = snapshot(cam);
 frameSize = size(videoFrame);
 videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1)]+30]);
 
+%sets up the initializations for the while loop to continue increasing by
+%one frame
 runLoop = true;
-numPts = 0;
 frameCount = 0;
+
+%creates a condition asking the user to choose what type of filter they
+%want and shows which options are available for each type
 disp('Welcome to the Big Brain Senior Photo Booth!')
 a = input('Would you like a color filter or an object filter? \n', 's');
 if strcmpi(a, 'color filter') || strcmpi(a, 'color')
@@ -20,7 +27,7 @@ else strcmpi(a, 'object filter') || strcmpi(a, 'object');
     o = input('Please type the object filter you would like: \n', 's');
 end
 
-% % This while loop does the color changing. 
+% This while loop does the color changing. 
 while runLoop && frameCount < 1000
 
     % Get the next frame.
@@ -28,6 +35,8 @@ while runLoop && frameCount < 1000
     videoFrameGray = rgb2gray(videoFrame); 
     frameCount = frameCount + 1;
     
+    %condition statements that takes into account the users input and
+    %displays the desired color filter
     if strcmpi(c, 'red')
         red = cat(3, videoFrameGray, zeros(size(videoFrameGray)), zeros(size(videoFrameGray)));
         step(videoPlayer, red);
@@ -58,11 +67,15 @@ while runLoop && frameCount < 1000
     else strcmpi(c, 'none');
         step(videoPlayer, videoFrame);
     end 
-        
-    runLoop = isOpen(videoPlayer);
+   
+   %Checks for whether the videoplayer has closed or not
+   runLoop = isOpen(videoPlayer);
 
 end
 
+clear cam;
+release(videoPlayer);
+release(facedetector);
 
 % %  Insert while loop for glasses (use o for object filter answers)
 % if strcmpi(o, 'glasses')
