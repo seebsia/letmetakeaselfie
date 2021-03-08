@@ -12,7 +12,7 @@ frameSize = size(videoFrame);
 videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1)]+30]);
 
 runLoop = true;
-numPts = 0;
+%numPts = 0;
 frameCount = 0;
 
 while runLoop && frameCount < 1000
@@ -36,6 +36,7 @@ while runLoop && frameCount < 1000
         im = image(x);
         im.AlphaData = max(x, [], 3);
         hold off
+
     end  
         
         % Display the annotated video frame using the video player object.
