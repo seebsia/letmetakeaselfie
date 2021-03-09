@@ -1,4 +1,6 @@
 % Created by Cassandra
+% In this function we use nose detector to superimpose a clown nose image
+% onto the detected nose. 
 function webcam_clownnose()
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'Nose');
