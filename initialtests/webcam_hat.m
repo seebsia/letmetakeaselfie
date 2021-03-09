@@ -1,5 +1,4 @@
-%created by Maliya initially but was ultimately made by the group in its
-%edits and modifications
+%created by everyone's coding and advice/ideas
 facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
 cam = webcam();
 

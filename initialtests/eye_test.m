@@ -1,4 +1,4 @@
-%created by Maliya and worked on together by everyone to initially test putting sunglasses on an image. in this file, we are attempting to tell matlab to detect the eyes in the file white_man and
+%worked on together by everyone to initially test putting sunglasses on an image. in this file, we are attempting to tell matlab to detect the eyes in the file white_man and
 %attempting to index the sunglasses into the box where matlab detects the
 %eyes
 eyesdetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');

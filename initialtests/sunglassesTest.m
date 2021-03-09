@@ -1,3 +1,4 @@
+%worked on by everyone 
 % enables CV toolbox that detects eyes/initializing variables
 eyesdetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 I = imread('../images/white_man.png');

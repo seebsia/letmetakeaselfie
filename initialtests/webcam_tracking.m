@@ -1,3 +1,6 @@
+%combined our initial code for webcam and facial detection with Cassie's
+%code for color filters.We added conditional statements so the user can
+%choose what color filter they want
 facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
 cam = webcam();
 

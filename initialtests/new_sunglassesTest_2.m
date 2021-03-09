@@ -1,3 +1,5 @@
+%created by Maliya. Used code from sunglasses_test to determine if it
+%worked on a different image and person
 eyesdetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 I = imread('../images/woman_face.png');
 bboxes = eyesdetector(I);

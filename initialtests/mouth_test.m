@@ -1,4 +1,5 @@
-
+%used same exact code from letstakeaselfie but tried to see how it worked
+%using the mouth object detector
 % Create the mouth detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel','Mouth');
 
