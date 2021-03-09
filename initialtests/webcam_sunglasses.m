@@ -40,10 +40,11 @@ while runLoop && frameCount < 1000
     
     % Display the annotated video frame using the video player object.
   
-    step(videoPlayer, x);
-        
-    runLoop = isOpen(videoPlayer);
-    release(videoPlayer);
-    release(eyesdetector);
+   % step(videoPlayer, x);
+     pause(.1);
+   % runLoop = isOpen(videoPlayer);
+  
 end
 clear cam;
+release(videoPlayer);
+release(eyesdetector);
