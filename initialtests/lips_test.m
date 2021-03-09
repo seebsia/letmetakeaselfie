@@ -1,3 +1,6 @@
+%Created by Alexis. Note: The Mouth detector is quite poor and frequently detects
+%eyes or circles in the background.
+
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'Mouth');
 
