@@ -36,11 +36,11 @@ while frameCount < 1000
         videodouble = im2double(videoFrame);
         x = zeros(size(videodouble));
         image(videodouble);
-        gradcap = im2double(imread('../images/lips.png'));
+        lips = im2double(imread('../images/lips.png'));
         % Resize lips image. Set lips to detected lips box location
         hold on
-        gradcap = imresize(gradcap,[bbox(4) (bbox(3) + 1)]);
-        x(bbox(2)+1:bbox(2)+bbox(4),bbox(1):bbox(1) + bbox(3), :) = gradcap;
+        lips = imresize(lips,[bbox(4) (bbox(3) + 1)]);
+        x(bbox(2)+1:bbox(2)+bbox(4),bbox(1):bbox(1) + bbox(3), :) = lips;
         % Transparency & Overlay of Lips on Image
         im = image(x);
         im.AlphaData = max(x, [], 3);
