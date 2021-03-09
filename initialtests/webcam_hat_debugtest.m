@@ -31,7 +31,7 @@ while frameCount < 1000
         videodouble = im2double(videoFrame);
         x = zeros(size(videodouble));
         image(videodouble);
-        gradcap = im2double(imread('grad_cap_neon.png'));
+        gradcap = im2double(imread('../images/grad_cap_neon.png'));
         % Resize sunglasses image. Set sunglasses to detected eye box ocation
         hold on
         gradcap = imresize(gradcap,[bbox(2) (bbox(3) + 1)]);
