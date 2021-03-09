@@ -1,9 +1,12 @@
+%in this file, we are attempting to tell matlab to detect the eyes in the file white_man and
+%attempting to index the sunglasses into the box where matlab detects the
+%eyes
 eyesdetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 url='https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/366-mj-7703-fon-jj.jpg?w=600&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=41f875a9595720f2637f9c3d11f7307d';
 in_img = url;
-filename ='white_man.png';
+filename ='../images/white_man.png';
 outfilename = websave(filename,url);
-I = imread('white_man.png');
+I = imread('../images/white_man.png');
 bboxes = eyesdetector(I);
 %the numbers in the vector represent [x y width height] from the upper-left
 %corner
@@ -14,9 +17,9 @@ bboxes = eyesdetector(I);
 %title('Detected Eyes'); %i actually dont think we need this
 %this creates a box around the detected region and names it Eyes
 
-sunglasses = imread('glasses.png');
+sunglasses = imread('../images/glasses.png');
 sunglasses = imresize(sunglasses, [(bboxes(4) + 1) (bboxes(3) + 1)]);
-guy = imread('white_man.png');
+guy = imread('../images/white_man.png');
 guy_sunglasses = guy;
  
 %rowshift = bboxes(2); now unnecessary

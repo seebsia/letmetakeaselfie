@@ -1,3 +1,5 @@
+%created by Maliya initially but was ultimately made by the group in its
+%edits and modifications
 facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
 cam = webcam();
 
@@ -20,7 +22,7 @@ while runLoop && frameCount < 1000
     videodouble = im2double(videoFrame);
     x = zeros(size(videodouble));
     image(videodouble);
-    gradcap = im2double(imread('grad_cap_neon.png'));
+    gradcap = im2double(imread('../images/grad_cap_neon.png'));
 
     % Resize gradcap image.
     hold on

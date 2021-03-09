@@ -1,15 +1,15 @@
 eyesdetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
-I = imread('woman_face.png');
+I = imread('../images/woman_face.png');
 bboxes = eyesdetector(I);
 % Places box over where eyes are detected
 Ieyes = insertObjectAnnotation(I,'rectangle',bboxes,'Eyes');
 figure
 imshow(Ieyes)
 % Bringing in the sunglasses and guy photos
-lady = im2double(imread('woman_face.png'));
+lady = im2double(imread('../images/woman_face.png'));
 x = zeros(size(lady));
 image(lady)
-sunglasses = im2double(imread('glasses.png'));
+sunglasses = im2double(imread('../images/glasses.png'));
 % Resize sunglasses image. Set sunglasses to detected eye box ocation
 hold on
 sunglasses = imresize(sunglasses, [(bboxes(4) + 1) (bboxes(3) + 1)]);

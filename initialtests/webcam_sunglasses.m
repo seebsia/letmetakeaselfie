@@ -25,7 +25,7 @@ while runLoop && frameCount < 1000
     videodouble = im2double(videoFrame);
     x = zeros(size(videodouble));
     image(videodouble);
-    sunglasses = im2double(imread('glasses.png'));
+    sunglasses = im2double(imread('../images/glasses.png'));
 
     % Resize sunglasses image. Set sunglasses to detected eye box ocation
     hold on
