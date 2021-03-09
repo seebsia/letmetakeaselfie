@@ -32,7 +32,7 @@ while frameCount < 1000
         videodouble = im2double(videoFrame);
         x = zeros(size(videodouble));
         image(videodouble);
-        clown_nose = im2double(imread('images/moustache.png'));
+        clown_nose = im2double(imread('images/clown_nose.png'));
         % Resize clown nose image. Set clown nose to halfway down face.
         hold on
         clown_nose = imresize(clown_nose, [(bbox(4) + 1) (bbox(3) + 1)]);
