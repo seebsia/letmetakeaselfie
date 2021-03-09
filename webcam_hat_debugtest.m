@@ -50,6 +50,7 @@ while frameCount < 1000
       % Check whether the video player window has been closed.
       % runLoop = isOpen(videoPlayer);
         runLoop = isgraphics(H);
+        
     end
     % Clean up.
     clear cam;
