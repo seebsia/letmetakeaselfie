@@ -10,6 +10,7 @@ videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1
 
 runLoop = true;
 frameCount = 0;
+H = figure;
 
 while runLoop && frameCount < 1000
     % Get the next frame.
@@ -44,7 +45,7 @@ while runLoop && frameCount < 1000
   
    % step(videoPlayer, x);
      pause(.1);
-   % runLoop = isOpen(videoPlayer);
+     runLoop = isgraphics(H);
 end
 clear cam;
 release(videoPlayer);
