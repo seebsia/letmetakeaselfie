@@ -1,7 +1,7 @@
 %Created by Alexis. We are using the eyes detector since it is the most
     % accurate and its size is comparable to the distance between nose and
     % mouth for the mustache. 
-function mustache();
+function webcam_mustache();
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 
@@ -26,7 +26,7 @@ while frameCount < 1000
     videoFrameGray = rgb2gray(videoFrame);
     frameCount = frameCount + 1;
     % Detection mode using eyes detector.
-    bbox = eyesdetector.step(videoFrame);
+    bbox = faceDetector.step(videoFrame);
     
     % Display the annotated video frame using the video player object.
     %   step(videoPlayer, videoFrame);
@@ -35,7 +35,7 @@ while frameCount < 1000
         videodouble = im2double(videoFrame);
         x = zeros(size(videodouble));
         image(videodouble);
-        mustache = im2double(imread('../images/moustache.png'));
+        mustache = im2double(imread('images/moustache.png'));
         % Resize mustache image. Set mustache to halfway down face.
         hold on
         mustache = imresize(mustache, [(bbox(4) + 1) (bbox(3) + 1)]);

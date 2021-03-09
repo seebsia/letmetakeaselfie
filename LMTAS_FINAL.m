@@ -5,18 +5,18 @@
 disp('Welcome to the Big Brain Senior Photo Booth!')
 a = input('Would you like a color filter or an object filter? \n', 's');
 if strcmpi(a, 'color filter') || strcmpi(a, 'color')
-    color();
+    webcam_color();
 else strcmpi(a, 'object filter') || strcmpi(a, 'object');
     disp('Available Object Filters: ');
     disp('Glasses, Hat, Hearts, Mustache');
     o = input('Please type the object filter you would like: \n', 's');
         if strcmpi(o, 'glasses')
-            sunglasses()
+            webcam_sunglasses();
         elseif strcmpi(o, 'hat')
-            hat();
+            webcam_hat_debugtest();
         elseif strcmpi(o, 'hearts')
-            hearts();
+            webcam_hearts();
         elseif strcmpi(o, 'mustache')
-            mustache();
+            webcam_mustache();
         end
 end
