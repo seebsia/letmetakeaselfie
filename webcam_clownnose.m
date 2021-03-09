@@ -1,6 +1,8 @@
 % Created by Cassandra
 % In this function we use nose detector to superimpose a clown nose image
-% onto the detected nose. 
+% onto the detected nose. Debugged previous issue with the function not
+% closing until forcibly exited by user in lines 22, 23, 52. Applied these
+% changes to the other webcam functions. 
 function webcam_clownnose()
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'Nose');
