@@ -15,10 +15,10 @@ frameSize = size(videoFrame);
 videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1)]+30]);
 
 runLoop = true;
-%numPts = 0;
 frameCount = 0;
-%runLoop &&
-while frameCount < 1000
+H = figure;
+
+while runLoop && frameCount < 1000
     
     % Get the next frame.
     videoFrame = snapshot(cam);
@@ -49,9 +49,10 @@ while frameCount < 1000
     end   
       pause(.1);
       % Check whether the video player window has been closed.
-      % runLoop = isOpen(videoPlayer);
+      runLoop = isgraphics(H);
     end
     % Clean up.
     clear cam;
     release(videoPlayer);
     release(faceDetector);
+end
