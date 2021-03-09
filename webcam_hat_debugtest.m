@@ -1,3 +1,5 @@
+%created by Cassandra. Code from webcam_hat but was debugged to fix the
+%transparency issue that was occuring with the gradcap iamge
 %this function superimposes a hat onto the head of the user in the webcam
 function webcam_hat_debugtest()
 % Create the face detector object.

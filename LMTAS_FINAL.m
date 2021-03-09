@@ -1,6 +1,8 @@
 %% main code to run project 
-%LMTAS_FINAL combines all of the scripts created for the filters and
-%allows them to be accessed in one simple script
+%Created by Hasiba
+%LMTAS_FINAL combines all of the filters and
+%allows them to be accessed in one simple script using conditional
+%statements and inputs from the user
 
 %creates a condition asking the user to choose what type of filter they
 %want and shows which options are available for each type
