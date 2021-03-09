@@ -23,6 +23,6 @@ else strcmpi(a, 'object filter') || strcmpi(a, 'object');
         elseif strcmpi(o, 'mustache')
             webcam_mustache();
         else strcmpi(o, 'lips')
-            lip_test();
+            lips_test();
         end
 end
