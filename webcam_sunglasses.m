@@ -45,7 +45,6 @@ while runLoop && frameCount < 1000
    % step(videoPlayer, x);
      pause(.1);
    % runLoop = isOpen(videoPlayer);
-  
 end
 clear cam;
 release(videoPlayer);
