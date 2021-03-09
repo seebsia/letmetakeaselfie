@@ -18,7 +18,7 @@ videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1
 runLoop = true;
 %numPts = 0;
 frameCount = 0;
-%runLoop &&
+H = figure;
 while frameCount < 1000
     
     % Get the next frame.
@@ -47,8 +47,9 @@ while frameCount < 1000
 
     end   
       pause(.1);
-        % Check whether the video player window has been closed.
-      %  runLoop = isOpen(videoPlayer);
+      % Check whether the video player window has been closed.
+      % runLoop = isOpen(videoPlayer);
+        runLoop = isgraphics(H);
     end
     % Clean up.
     clear cam;
