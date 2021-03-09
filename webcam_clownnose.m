@@ -1,3 +1,4 @@
+% Created by Cassandra
 function webcam_clownnose()
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'Nose');
