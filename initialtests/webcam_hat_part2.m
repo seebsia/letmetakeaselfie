@@ -1,4 +1,6 @@
-    facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
+%created by Maliya. Was an attempt at using the imoverlay function to
+%input one image over another in each frame. 
+facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
 cam = webcam();
 
 videoFrame = snapshot(cam);
@@ -17,7 +19,7 @@ while runLoop && frameCount < 1000
     
     bboxes = facedetector.step(videoFrame);
 
-    gradcap = imread('grad_cap_neon.png');
+    gradcap = imread('../images/grad_cap_neon.png');
     gradcap = imresize(gradcap, [360 640]);
     grad_cap_webcam = im2double(videoFrameGray);
     x = imoverlay(grad_cap_webcam,gradcap);
