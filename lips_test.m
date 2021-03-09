@@ -36,7 +36,7 @@ while frameCount < 1000
         videodouble = im2double(videoFrame);
         x = zeros(size(videodouble));
         image(videodouble);
-        lips = im2double(imread('../images/lips.png'));
+        lips = im2double(imread('images/lips.png'));
         % Resize lips image. Set lips to detected lips box location
         hold on
         lips = imresize(lips,[bbox(4) (bbox(3) + 1)]);
