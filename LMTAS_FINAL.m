@@ -12,7 +12,7 @@ if strcmpi(a, 'color filter') || strcmpi(a, 'color')
     webcam_color();
 else strcmpi(a, 'object filter') || strcmpi(a, 'object');
     disp('Available Object Filters: ');
-    disp('Glasses, Hat, Hearts, Mustache, Lips');
+    disp('Glasses, Hat, Hearts, Mustache, Lips, Clown Nose');
     o = input('Please type the object filter you would like: \n', 's');
         if strcmpi(o, 'glasses')
             webcam_sunglasses();
@@ -22,7 +22,9 @@ else strcmpi(a, 'object filter') || strcmpi(a, 'object');
             webcam_hearts();
         elseif strcmpi(o, 'mustache')
             webcam_mustache();
-        else strcmpi(o, 'lips')
+        elseif strcmpi(o, 'lips')
             lips_test();
+        else strcmpi(o, 'clown nose')
+            webcam_clownnose();
         end
 end
