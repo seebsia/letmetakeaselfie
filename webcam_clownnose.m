@@ -1,4 +1,4 @@
-function webcam_clownnose();
+function webcam_clownnose()
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 
@@ -33,11 +33,11 @@ while frameCount < 1000
         x = zeros(size(videodouble));
         image(videodouble);
         clown_nose = im2double(imread('images/moustache.png'));
-        % Resize mustache image. Set mustache to halfway down face.
+        % Resize clown nose image. Set clown nose to halfway down face.
         hold on
         clown_nose = imresize(clown_nose, [(bbox(4) + 1) (bbox(3) + 1)]);
         x(bbox(2)+bbox(4)*2:bbox(2) + bbox(4)*3, bbox(1):bbox(1) + bbox(3), :) = clown_nose;
-        % Transparency & Overlay of Mustache on Image
+        % Transparency & Overlay of Clown Nose on Image
         im = image(x);
         im.AlphaData = max(x, [], 3);
         hold off
