@@ -1,5 +1,5 @@
 %% main code to run project 
-%this script combines all of the scripts created for the filters and
+%LMTAS_FINAL combines all of the scripts created for the filters and
 %allows them to be accessed in one simple script
 
 %creates a condition asking the user to choose what type of filter they

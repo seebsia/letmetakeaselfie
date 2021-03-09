@@ -1,3 +1,6 @@
+%Created by Cassandra. Was made to determine how to track different facial
+%features and to determine which of the built in trackers worked best for
+%our project purposes
 faceDetector = vision.CascadeObjectDetector;
 shapeInserter = vision.ShapeInserter('BorderColor','Custom','CustomBorderColor',[0 255 255]);
 I = imread('visionteam.jpg');
