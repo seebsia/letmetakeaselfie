@@ -11,7 +11,6 @@ videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1
 runLoop = true;
 frameCount = 0;
 
-
 while runLoop && frameCount < 1000
     % Get the next frame.
     videoFrame = snapshot(cam);
@@ -52,3 +51,5 @@ clear cam;
 release(videoPlayer);
 release(eyesdetector);
 end
+
+
