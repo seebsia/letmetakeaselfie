@@ -19,7 +19,7 @@ runLoop = true;
 %numPts = 0;
 frameCount = 0;
 H = figure;
-while frameCount < 1000
+while runLoop && frameCount < 1000
     
     % Get the next frame.
     videoFrame = snapshot(cam);
