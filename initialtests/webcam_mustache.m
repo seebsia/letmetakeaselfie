@@ -1,3 +1,7 @@
+%Created by Alexis. We are using the eyes detector since it is the most
+    % accurate and its size is comparable to the distance between nose and
+    % mouth for the mustache. 
+
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 
@@ -21,9 +25,7 @@ while frameCount < 1000
     videoFrame = snapshot(cam);
     videoFrameGray = rgb2gray(videoFrame);
     frameCount = frameCount + 1;
-    % Detection mode. We are using the eyes detector since it is the most
-    % accurate and its size is comparable to the distance between nose and
-    % mouth for the mustache. 
+    % Detection mode using eyes detector.
     bbox = eyesdetector.step(videoFrame);
     
     % Display the annotated video frame using the video player object.
