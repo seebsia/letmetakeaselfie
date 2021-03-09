@@ -14,8 +14,8 @@ videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1
 runLoop = true;
 %numPts = 0;
 frameCount = 0;
-
-while runLoop && frameCount < 1000
+%runLoop &&
+while frameCount < 1000
     
     % Get the next frame.
     videoFrame = snapshot(cam);
@@ -23,6 +23,10 @@ while runLoop && frameCount < 1000
     frameCount = frameCount + 1;
     % Detection mode.
     bbox = faceDetector.step(videoFrameGray);
+    
+      % Display the annotated video frame using the video player object.
+    %   step(videoPlayer, videoFrame);
+    %hold on    
     if ~isempty(bbox)
         videodouble = im2double(videoFrame);
         x = zeros(size(videodouble));
@@ -37,13 +41,10 @@ while runLoop && frameCount < 1000
         im.AlphaData = max(x, [], 3);
         hold off
 
-    end  
-        
-        % Display the annotated video frame using the video player object.
-        step(videoPlayer, videoFrame);
-        
+    end   
+      pause(.1);
         % Check whether the video player window has been closed.
-        runLoop = isOpen(videoPlayer);
+      %  runLoop = isOpen(videoPlayer);
     end
     % Clean up.
     clear cam;

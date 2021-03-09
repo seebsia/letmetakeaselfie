@@ -10,7 +10,7 @@ frameCount = 0;
 
 
 while runLoop && frameCount < 1000
-        % Get the next frame.
+    % Get the next frame.
     videoFrame = snapshot(cam);
     videoFrameGray = rgb2gray(videoFrame);
     frameCount = frameCount + 1;
