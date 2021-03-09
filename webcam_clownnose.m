@@ -1,6 +1,6 @@
 function webcam_clownnose()
 % Create the face detector object.
-faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
+faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'Nose');
 
 % Create the webcam object.
 cam = webcam();
@@ -15,8 +15,8 @@ videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1
 runLoop = true;
 %numPts = 0;
 frameCount = 0;
-%runLoop &&
-while frameCount < 1000
+H = figure;
+while runLoop && frameCount < 1000
     
     % Get the next frame.
     videoFrame = snapshot(cam);
@@ -27,7 +27,7 @@ while frameCount < 1000
     
     % Display the annotated video frame using the video player object.
     %   step(videoPlayer, videoFrame);
-    %hold on    
+    %hold on
     if ~isempty(bbox)
         videodouble = im2double(videoFrame);
         x = zeros(size(videodouble));
@@ -36,19 +36,21 @@ while frameCount < 1000
         % Resize clown nose image. Set clown nose to halfway down face.
         hold on
         clown_nose = imresize(clown_nose, [(bbox(4) + 1) (bbox(3) + 1)]);
-        x(bbox(2)+bbox(4)*2:bbox(2) + bbox(4)*3, bbox(1):bbox(1) + bbox(3), :) = clown_nose;
+        x(bbox(2):bbox(2) + bbox(4), bbox(1):bbox(1) + bbox(3), :) = clown_nose;
         % Transparency & Overlay of Clown Nose on Image
         im = image(x);
         im.AlphaData = max(x, [], 3);
         hold off
+        
+    end
+    pause(.1);
+    % Check whether the figure window has been closed.
+    runLoop = isgraphics(H);
+end
 
-    end   
-      pause(.1);
-        % Check whether the video player window has been closed.
-      %  runLoop = isOpen(videoPlayer);
-    end
-    % Clean up.
-    clear cam;
-    release(videoPlayer);
-    release(faceDetector);
-    end
+% Clean up.
+clear cam;
+release(videoPlayer);
+release(faceDetector);
+
+end
