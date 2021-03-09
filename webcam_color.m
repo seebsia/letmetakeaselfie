@@ -1,4 +1,4 @@
-function webcam_color()
+function color()
 %create the face detector object and webcam object
 facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
 cam = webcam();
@@ -13,20 +13,11 @@ videoPlayer = vision.VideoPlayer('Position', [100 100 [frameSize(2), frameSize(1
 %one frame
 runLoop = true;
 frameCount = 0;
+% Continue to ask which filter the user wants. 
 
-%creates a condition asking the user to choose what type of filter they
-%want and shows which options are available for each type
-disp('Welcome to the Big Brain Senior Photo Booth!')
-a = input('Would you like a color filter or an object filter? \n', 's');
-if strcmpi(a, 'color filter') || strcmpi(a, 'color')
-    disp('Available Color Filters: ');
-    disp('Red, Blue, Green Purple, Pink, Orange, Yellow, XRay, Gray XRay, None');
-    c = input('Please type the color filter you would like: \n', 's');
-else strcmpi(a, 'object filter') || strcmpi(a, 'object');
-    disp('Available Object Filters: ');
-    disp('Glasses, Hat, Hearts');
-    o = input('Please type the object filter you would like: \n', 's');
-end
+disp('Available Color Filters: ');
+disp('Red, Blue, Green Purple, Pink, Orange, Yellow, XRay, Gray XRay, None');
+c = input('Please type the color filter you would like: \n', 's');
 
 % This while loop does the color changing. 
 while runLoop && frameCount < 1000
@@ -73,21 +64,6 @@ while runLoop && frameCount < 1000
    runLoop = isOpen(videoPlayer);
 
 end
-
-
-% %  Insert while loop for glasses (use o for object filter answers)
-% if strcmpi(o, 'glasses')
-% end
-
-
-% % Insert while loop for hat (use o for object filter answers)
-% if strcmpi(o, 'hat')
-% end
-
-
-% % Insert while loop for hearts (use o for object filter answers)
-% if strcmpi(o, 'hearts')
-% end
 
 %Clean everything up
 clear cam;

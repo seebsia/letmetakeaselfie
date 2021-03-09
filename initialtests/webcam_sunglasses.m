@@ -1,3 +1,4 @@
+function sunglasses()
 eyesdetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 cam = webcam();
 
@@ -48,3 +49,4 @@ end
 clear cam;
 release(videoPlayer);
 release(eyesdetector);
+end

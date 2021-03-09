@@ -1,7 +1,7 @@
 %Created by Alexis. We are using the eyes detector since it is the most
     % accurate and its size is comparable to the distance between nose and
     % mouth for the mustache. 
-
+function mustache();
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 
@@ -54,3 +54,4 @@ while frameCount < 1000
     clear cam;
     release(videoPlayer);
     release(faceDetector);
+    end

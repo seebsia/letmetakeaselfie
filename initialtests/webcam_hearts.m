@@ -1,3 +1,4 @@
+function hearts();
 eyesdetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 cam = webcam();
 
@@ -47,3 +48,4 @@ while runLoop && frameCount < 1000
     release(eyesdetector);
 end
 clear cam;
+end

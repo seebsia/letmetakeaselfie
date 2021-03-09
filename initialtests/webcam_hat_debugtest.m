@@ -1,3 +1,4 @@
+function hat()
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
 
@@ -50,3 +51,4 @@ while frameCount < 1000
     clear cam;
     release(videoPlayer);
     release(faceDetector);
+end
