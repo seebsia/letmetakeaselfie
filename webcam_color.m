@@ -1,3 +1,4 @@
+function webcam_color()
 %create the face detector object and webcam object
 facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
 cam = webcam();
@@ -92,5 +93,7 @@ end
 clear cam;
 release(videoPlayer);
 release(facedetector);
+
+end
 
 
