@@ -1,4 +1,6 @@
-%% main code to run project
+%% main code to run project 
+%this script combines all of the scripts created for the filters and
+%allows them to be accessed in one simple script
 
 %creates a condition asking the user to choose what type of filter they
 %want and shows which options are available for each type

@@ -1,3 +1,5 @@
+%this function was created to imput a color filter over webcam footage and
+%allows the user to select what color they want
 function webcam_color()
 %create the face detector object and webcam object
 facedetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');
@@ -16,7 +18,7 @@ frameCount = 0;
 % Continue to ask which filter the user wants. 
 
 disp('Available Color Filters: ');
-disp('Red, Blue, Green Purple, Pink, Orange, Yellow, XRay, Gray XRay, None');
+disp('Red, Blue, Green, Purple, Pink, Orange, Yellow, XRay, Gray XRay, None');
 c = input('Please type the color filter you would like: \n', 's');
 
 % This while loop does the color changing. 

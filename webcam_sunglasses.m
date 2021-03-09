@@ -1,3 +1,5 @@
+%create a function that inputs the sunglasses image on detected eyes in a
+%webcam
 function webcam_sunglasses()
 eyesdetector = vision.CascadeObjectDetector('ClassificationModel', 'EyePairBig');
 cam = webcam();
@@ -28,7 +30,7 @@ while runLoop && frameCount < 1000
     image(videodouble);
     sunglasses = im2double(imread('images/glasses.png'));
 
-    % Resize sunglasses image. Set sunglasses to detected eye box ocation
+    % Resize sunglasses image. Set sunglasses to detected eye box location
     hold on
     sunglasses = imresize(sunglasses, [(bboxes(4) + 1) (bboxes(3) + 1)]);
     x(bboxes(2):bboxes(2) + bboxes(4), bboxes(1):bboxes(1) + bboxes(3), :) = sunglasses;

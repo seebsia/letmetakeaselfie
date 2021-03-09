@@ -1,3 +1,4 @@
+%this function superimposes a hat onto the head of the user in the webcam
 function webcam_hat_debugtest()
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector('ClassificationModel', 'FrontalFaceLBP');

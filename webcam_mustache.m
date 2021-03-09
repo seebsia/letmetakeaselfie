@@ -1,4 +1,4 @@
-%Created by Alexis. We are using the eyes detector since it is the most
+%Created by Alexis. In this function, we are using the eyes detector since it is the most
     % accurate and its size is comparable to the distance between nose and
     % mouth for the mustache. 
 function webcam_mustache();
