@@ -6,7 +6,7 @@ url='https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/366-m
 in_img = url;
 filename ='white_man.png';
 outfilename = websave(filename,url);
-I = imread('white_man.png');
+I = imread('../images/white_man.png');
 bboxes = eyesdetector(I);
 %the numbers in the vector represent [x y width height] from the upper-left
 %corner
