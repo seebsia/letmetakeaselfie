@@ -11,6 +11,6 @@ bboxes = nosedetector(woman);
 %gradcap = imread('grad_cap_neon.png');
  
 
-Inose = insertObjectAnnotation(I,'rectangle',bboxes,'Nose');
+Inose = insertObjectAnnotation(woman,'rectangle',bboxes,'Nose');
 figure
 imshow(Inose)
