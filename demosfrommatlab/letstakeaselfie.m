@@ -1,3 +1,8 @@
+%created by Maliya. Copy and pasted from mathworks demo. We put it here to
+%see how to use the Computer Vision Toolbox and its functions to use the
+%webcam and facial tracker. Allowed us to use and edit this code to fit our
+%purposes for other scripts and our main project.
+
 % Create the face detector object.
 faceDetector = vision.CascadeObjectDetector();
 
